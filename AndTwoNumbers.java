@@ -11,7 +11,7 @@ class ListNode {
     ListNode(int x) { val = x; }
  }
 
-public class Solution {
+public class AndTwoNumbers {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode head = new ListNode(-1);
         ListNode p = head;
@@ -19,7 +19,7 @@ public class Solution {
         int a,b,c;
         while(l1 != null || l2!=null){
             a=b= 0;
-            //节点为零的时候要加0
+            //节点为零的时候要不赋a,b新值，直接加0
             if(l1!=null){
                 a = l1.val;
                 l1 = l1.next;
@@ -33,7 +33,7 @@ public class Solution {
             p = p.next;
             carry = c /10;
         }
-        //两条list上的所有节点后可能还要进1
+        //计算完两条list上的所有节点后可能还要进1
         if(carry != 0){
             p.next = new ListNode(carry);
         }
